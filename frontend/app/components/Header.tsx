@@ -3,6 +3,7 @@
 import React from 'react'
 import { useAppKit } from '@reown/appkit/react'
 import { useAccount } from 'wagmi'
+import Link from 'next/link'
 
 export default function Header() {
   const { open } = useAppKit()
@@ -31,6 +32,12 @@ export default function Header() {
             <a href="#benefits" className="text-gray-300 hover:text-blue-400 transition-colors">
               Benefits
             </a>
+            {isConnected && (
+              <Link href="/admin" className="text-gray-300 hover:text-blue-400 transition-colors flex items-center space-x-1">
+                <span>⚙️</span>
+                <span>Admin</span>
+              </Link>
+            )}
           </div>
 
           <button
